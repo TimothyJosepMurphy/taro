@@ -604,6 +604,7 @@ func checkSpendCommitments(t *testing.T, senderKey, receiverKey [32]byte,
 	}
 
 	inputMatchingAsset := !isSplit
+
 	// If our spend creates an unspenable root, no asset should exist
 	// at the location of the input asset.
 	if spend.NewAsset.IsUnspendable() && isSplit {

@@ -47,7 +47,8 @@ func testBasicSend(t *harnessTest) {
 
 		assertAddrCreated(t.t, secondTarod, rpcAssets[0], bobAddr)
 
-		sendResp := sendAssetsToAddr(t, bobAddr)
+		sendResp, err := sendAssetsToAddr(t.tarod, bobAddr)
+		require.NoError(t.t, err)
 		sendRespJSON, err := formatProtoJSON(sendResp)
 		require.NoError(t.t, err)
 		t.Logf("Got response from sending assets: %v", sendRespJSON)

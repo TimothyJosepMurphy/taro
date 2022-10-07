@@ -443,6 +443,7 @@ func TestVM(t *testing.T) {
 				require.Equal(t, testCase.err, err)
 				return
 			}
+
 			// For splits, sort by ascending value so that we fail
 			// early on invalid zero-value locators.
 			splitAssets := maps.Values(splitSet)
